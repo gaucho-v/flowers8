@@ -1,0 +1,245 @@
+@font-face {
+font-family: "RalewayRegular";
+src: url("./fonts/MolokoRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f1f0;
+    font-family: 'RalewayRegular', serif;
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flowers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.flower {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    animation: bloom 4s infinite ease-in-out, rotate 8s infinite linear;
+    opacity: 0;
+}
+
+.flower1 {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.flower2 {
+    top: 24%;
+    left: 75%;
+    animation-delay: 1s;
+}
+
+.flower3 {
+    top: 50%;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+.flower4 {
+    top: 60%;
+    left: 80%;
+    animation-delay: 3s;
+}
+
+.flower5 {
+    top: 80%;
+    left: 30%;
+    animation-delay: 4s;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+.petal {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: pink;
+    border-radius: 50%;
+}
+
+.p1 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.p2 {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.p3 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.p4 {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+@keyframes bloom {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.message {
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+h1 {
+    margin-top: 0;
+    color: #ff6f61;
+    font-size: 2.3em;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p {
+    color: #333;
+    font-size: 1.5em;
+    line-height: 1.5;
+}
+
+h1 > p {
+    display: inline;
+    color: #ff6f61;
+    font-size: 1.4em;
+    font-family: "Tahoma", sans-serif;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f9f1f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#loading-screen p {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Анимация загрузки */
+.loader {
+    border: 8px solid #ff6f61;
+    border-top: 8px solid transparent;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Основная открытка (скрыта до загрузки) */
+#card {
+    display: none;
+}
+
+.audio-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+#play-pause-btn {
+    color: #ff6f61;
+    background-color: #ff6f61;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0.5;
+}
+
+#play-pause-btn:hover {
+    opacity: 1;
+}
