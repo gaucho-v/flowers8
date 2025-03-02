@@ -7,7 +7,7 @@ src: url("./fonts/MolokoRegular.ttf") format("truetype");
 
 body {
     margin: 0 auto;
-    margin-top: 120px;
+    margin-top: 5%;
     padding: 0;
     display: flex;
     justify-content: center;
